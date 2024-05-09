@@ -1,0 +1,149 @@
+-- Hi everybody :> we're Freefall!
+
+-- Punch 1 (Var 2 - Heaven must've sent you.)
+do
+once $ s "finSfx:3" # room 1.2 # gain 1 # legato 1.8
+xfadeIn 1 4$ loopAt 4 $ chop 32 $ sound "finSamp:3" # room 1.2 # krush 0.7 # gain 1.5
+d12 $ slow 2 $ chop 64 $ jux (# speed "0.5") $ s "sheffield" # gain (slow 2 (segment 128 (range 0.3 0.8 sine)))
+
+-- Punch 2 (Var 3 - Questions to the self.)
+do
+once $ s "finSfx:3" # room 1.2 # gain 1 # legato 1.8
+d1 $ loopAt 4 $ chop 32 $ sound "finSamp:13" # room 0.8 # krush 0.6 # gain 1.5
+d2 $ loopAt 2 $ s "breaks125:1 breaks125:2" # room 0.4 # krush 0.9 # gain 0.9
+
+-- Punch 3 (Var 4 - What do I like? What do I love?)
+do
+once $ s "finSfx:3" # room 1.2 # gain 1 # legato 1.8
+d1 $ loopAt 6 $ chop 32 $ sound "finSamp:14" # room 0.8 # krush 0.2 # gain 1.3 # lpf 400
+d2 $ loopAt 2 $ s "breaks125:2 breaks125:1" # room 0.4 # krush 0.3 # gain 0.9
+
+-- Start (Var 0 - So we begin,)
+
+d1 $ s "bd ~ ~ ~ ~" # lpf "500 1000 1500" # lpq 0.5 # room 0.7 # gain 0.9
+
+d1 $ s "bd ~ bd ~ ~" # lpf "500 1000 1500" # lpq 0.5 # room 0.7 # gain 0.9
+
+d1 $ s "bd hh bd hh*2" # lpf "500 1000 1500" # lpq 0.5 # room 0.7 # gain 0.9
+
+xfade 2 $ note "<[g4'm9 f4'maj9 g4'm9 c4'maj13] [d5'min7 bf4'nine a4'min9 c4'nine]>"
+   # sound "<superpiano supersquare supersaw>"
+   # lpf "500 1000 1500"
+   # lpq 0.5
+   # gain 0.6
+
+xfade 3 $ sound "drum*8" # n (irand 8) # lpf (slow 4 $ range 200 5000 $ sine) # gain 1.2
+
+xfade 4 $ sound "clap [house:4 house:4]" # lpf (fast 2 $ range 3000 5000 $ sine) # gain 1.1
+
+do
+xfade 2 $ note "<[g4'm9 f4'maj9 g4'm9 c4'maj13] [d5'min7 bf4'nine a4'min9 c4'nine]>"
+   # sound "<superpiano supersquare supersaw>"
+   # hpf "500 1000 1500"
+   # lpq 0.5
+   # gain 0.7
+xfade 3 $ slow 2 $ s "wind" >| note "[g4'm9 f4'maj9 g4'm9 c4'maj13] [d5'min7 bf4'nine a4'min9 c4'nine]" # room 0.7 # gain 0.7
+
+xfade 1 $ loopAt 10 $ chop 32 $ sound "finSamp:0" # room 0.8 # krush 0.8 # hpf (slow 4 $ range 3000 5000 $ sine)
+
+xfade 2 $ slow 2 $ s "wind" >| note "[g4'm9 f4'maj9 g4'm9 c4'maj13] [d5'min7 bf4'nine a4'min9 c4'nine]" # room 0.7 # gain 0.7
+
+-- Eyes Shut (Var 1)
+do
+xfade 1 $ loopAt 10 $ chop 32 $ sound "finSamp:0" # room 0.8 # krush 0.8 # hpf (slow 4 $ range 3000 5000 $ sine) # gain 1.5
+xfadeIn 2 8 $ silence
+xfade 3 $ slow 2 $ chop 64 $ jux (# speed "0.5") $ s "sheffield" # gain (slow 2 (segment 128 (range 0.3 0.8 sine)))
+xfade 4 $ silence
+
+-- Eyes Wide Open
+do
+xfadeIn 1 10 $ loopAt 10 $ chop 32 $ sound "finSamp:0" # room 0.8 # krush 0.8 # lpf (slow 4 $ range 1000 5000 $ sine) # gain 1.2
+xfade 2 $ s "seawolf" # n (irand 3) # hpf (slow 2 $ range 1000 3000 $ sine) # gain 0.7
+
+-- Back
+d1 $ loopAt 10 $ chop 32 $ sound "finSamp:0" # room 0.8 # krush 0.8 # hpf (slow 4 $ range 3000 5000 $ sine) # gain 1.2
+
+-- Front
+d1 $ loopAt 10 $ chop 32 $ sound "finSamp:0" # room 0.8 # krush 0.8 # lpf (slow 4 $ range 1000 5000 $ sine) # gain 1.2
+
+-- Var 1.5 (Scratch that - I'm falling on my own terms!)
+do
+once $ sound "finSfx:8" # krush 0.2 # gain 1.3 # legato 0.8
+d1 $ loopAt 8 $ chop 32 $ sound "finSamp:10" # room 0.8 # krush 0.8 # gain 1.3
+d2 silence
+
+-- You gotta do what? You gotta believe!
+once $ sound "finSfx:9" # lpf 1500 # room 0.6 # gain 1.2
+once $ sound "finSfx:5" # lpf 1200 # room 0.5 # gain 1.1
+once $ sound "finSfx:6" # lpf 1200 # room 0.5 # gain 1.1
+once $ sound "finSfx:7" # lpf 1500 # room 0.6
+
+-- Var 2
+do
+d1 $ loopAt 4 $ chop 32 $ sound "finSamp:3" # room 1.2 # krush 0.7 # gain 1.2
+d12 $ slow 2 $ chop 64 $ jux (# speed "0.5") $ s "sheffield" # gain (slow 2 (segment 128 (range 0.3 0.8 sine)))
+
+-- Var 3
+do
+d1 $ loopAt 4 $ chop 32 $ sound "finSamp:13" # room 0.8 # krush 0.6 # gain 1.5
+d2 $ loopAt 2 $ s "breaks125:1 breaks125:2" # room 0.4 # krush 0.9 # gain 0.9
+
+-- Var 4
+do
+d1 $ loopAt 6 $ chop 32 $ sound "finSamp:14" # room 0.8 # krush 0.2 # gain 1.3 # lpf 400
+d2 $ loopAt 2 $ s "breaks125:2 breaks125:1" # room 0.4 # krush 0.3 # gain 0.9
+
+-- Var 4 (Front)
+d1 $ loopAt 6 $ chop 32 $ sound "finSamp:14" # room 0.8 # krush 0.2 # gain 1.3
+
+-- Crash and Rewind (Freefalling upwards)
+do
+d1 silence
+d2 silence
+once $ qtrigger $ sound "finSfx:0" # room 0.8 # krush 0.5 # gain 1.2
+
+-- Var 5 (Upwards!)
+d3 $ loopAt 16 $ chop 32 $ sound "finSamp:12" # room 0.8 # krush 0.5 # lpf 400 # gain 1.3
+
+-- Var 5 (Front)
+d2 $ loopAt 16 $ chop 32 $ sound "finSamp:12" # room 0.8 # krush 0.8 # hpf 1000 # gain 1.1
+
+-- Var 5 (Back)
+d2 $ loopAt 16 $ chop 32 $ sound "finSamp:12" # room 0.8 # krush 0.5 # lpf 400 # gain 1.3
+
+-- Fade Out
+d2 silence
+
+-- And Out
+d3 $ loopAt 16 $ chop 32 $ sound "finSamp:12" # room 0.8 # krush 0.5 # lpf 400 # gain 1
+
+-- Take a Moment
+do
+d3 $ silence
+d12 $ silence
+
+-- Finale
+
+d1 $ s "808sd:3" # gain 1.1
+d2 $ s "808sd:3 808sd:3 808sd:21 808sd:3" # gain 1.1
+d3 $ slow 2 $ s "808lt ~ [808lt 808lt] ~" # gain 1.5
+
+-- I heard a voice.
+
+once $ sound "finSamp:16" # hpf 3000 # room 2 # gain 0.7
+once $ sound "finSamp:16" # lpf 400 # room 2 # gain 0.8
+once $ sound "finSamp:16" # room 1.5 # gain 0.7
+
+d2 $ silence
+
+once $ sound "finSamp:16" # gain 0.9
+
+-- And the voice told me,
+
+do
+d1 $ qtrigger $ filterWhen (>=0) $ loopAt 56 $ chop 32 $ sound "finSamp:15" # room 0.4 # gain 1.2
+d2 $ silence
+d3 $ silence
+
+--That we're gonna be okay.
+hush
